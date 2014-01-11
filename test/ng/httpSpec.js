@@ -661,7 +661,7 @@ describe('$http', function() {
 
     describe('request headers', function() {
 
-      if ('should be new objects', function() {
+      it('should be new objects', function() {
         expect($http.defaults.headers.post).not.toBe($http.defaults.headers.put);
         expect($http.defaults.headers.post).not.toBe($http.defaults.headers.put);
         expect($http.defaults.headers.post).not.toBe($http.defaults.headers.patch);
