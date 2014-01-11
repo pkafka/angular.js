@@ -661,6 +661,13 @@ describe('$http', function() {
 
     describe('request headers', function() {
 
+      if ('should be new objects', function() {
+        expect($http.defaults.headers.post).not.toBe($http.defaults.headers.put);
+        expect($http.defaults.headers.post).not.toBe($http.defaults.headers.put);
+        expect($http.defaults.headers.post).not.toBe($http.defaults.headers.patch);
+        expect($http.defaults.headers.put).not.toBe($http.defaults.headers.patch);
+      });
+
       it('should send custom headers', function() {
         $httpBackend.expect('GET', '/url', undefined, function(headers) {
           return headers['Custom'] == 'header';
